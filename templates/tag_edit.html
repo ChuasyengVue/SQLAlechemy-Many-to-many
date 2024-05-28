@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post With Tags</title>
+</head>
+<body>
+    
+    <h1>Edit Post</h1>
+
+    <form method="POST" action="/tags/{{ tag.id }}/edit">
+        <div>
+            <label for="title" name="title">Title </label>
+            <input type="text" id="title" name="title" value="{{tag.name}}">
+        </div>
+        <div>
+            {% for tag in tags %}
+            <input type="checkbox" value="{{post.id}}" id="post_{{post.id}}" {% if post in tag.posts %} checked {% endif %} name="tags">
+            <label for="post_{{post.id}}"> {{post.title}} </label>
+            {% endfor %}
+        </div>
+        <div>
+            <button formaction="/tags" formmethod="GET">Cancel</button>
+            <button type="submit">Edit</button>
+        </div>
+    </form>
+</body>
+</html>

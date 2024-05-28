@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Form</title>
+</head>
+<body>
+    
+    <h1>Create a user</h1>
+
+    <form action='/users/new' method="POST">
+        <br>
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name" placeholder="Enter a first name">
+        <br>
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name" placeholder="Enter a last name">
+        <br>
+        <label for="image_url">Image URL</label>
+        <input type="text" name="image_url" id="image_url" placeholder="Provide an image of this user">
+        <br>
+        <button type="submit">Add</button>
+    </form>
+    <br>
+    <a href="/"> User List</a>
+
+</body>
+</html>
